@@ -1,5 +1,5 @@
 variable "project_id" {
-  description = "GCP project for the Terraform lab"
+  description = "GCP project ID"
   type        = string
   default     = "devops-504813"
 }
@@ -16,19 +16,19 @@ variable "bucket_name" {
 }
 
 variable "vpc_name" {
-  description = "Name of the development VPC"
+  description = "Development VPC name"
   type        = string
   default     = "dev-vpc"
 }
 
 variable "subnet_name" {
-  description = "Name of the development subnet"
+  description = "Development subnet name"
   type        = string
   default     = "dev-subnet"
 }
 
 variable "subnet_cidr" {
-  description = "IP range for the development subnet"
+  description = "Development subnet CIDR"
   type        = string
   default     = "10.10.0.0/24"
 }
@@ -40,13 +40,13 @@ variable "vm_name" {
 }
 
 variable "vm_zone" {
-  description = "Zone for the development VM"
+  description = "Development VM zone"
   type        = string
   default     = "asia-south1-a"
 }
 
 variable "vm_machine_type" {
-  description = "Machine type for the development VM"
+  description = "Development VM machine type"
   type        = string
   default     = "e2-micro"
 }

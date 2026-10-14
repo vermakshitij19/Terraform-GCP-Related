@@ -3,10 +3,11 @@ resource "google_compute_instance" "dev_vm" {
   project      = var.project_id
   zone         = var.vm_zone
   machine_type = var.vm_machine_type
-  tags         = ["iap-ssh"]
+
+  tags = var.network_tags
 
   metadata = {
-    enable-oslogin = "TRUE"
+    enable-oslogin = var.enable_os_login ? "TRUE" : "FALSE"
   }
 
   boot_disk {
@@ -17,7 +18,7 @@ resource "google_compute_instance" "dev_vm" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.dev_subnet.id
+    subnetwork = var.subnet_id
   }
 
   labels = {
